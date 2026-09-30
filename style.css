@@ -1,0 +1,169 @@
+/* --- 1. CONFIGURAÇÕES GERAIS E MEDIDAS FLUIDAS --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #eef5f0, #dbeade); /* Cores de mercado saudável */
+  min-height: 100vh;
+  margin: 0;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container adaptável */
+.container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow:  10px 15px rgba(2, 2, 2, 0.164);
+  width: 100%;       /* Ocupa a tela toda em telemóveis */
+  max-width: 550px;  /* Limita o tamanho em computadores para não esticar */
+}
+
+h2, h3 {
+  color: #1c311f;
+  text-align: center;
+  margin-top: 0;
+}
+
+/* --- 2. FORMULÁRIO RESPONSIVO --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #1c311f;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px; /* 16px evita o zoom automático irritante do iOS Safari ao focar no campo */
+}
+
+/* Campos empilhados por padrão no telemóvel */
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+button[type="submit"] {
+  background-color: #0ee243; /* Laranja moderno de alta conversão */
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: green;
+}
+
+/* --- 3. LISTA E TOTAL --- */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid #2d5a27;
+}
+
+li button {
+  background-color: #ff0505;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.total-container {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f2f8f3;
+  border: 1px solid #2d5a27;
+  border-radius: 6px;
+  text-align: right;
+  font-size: 1.2rem;
+  color: #1c311f;
+}
+.total-container button {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  width: 100px;
+  display: flex;
+  font-size: 21px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: -40px;
+  background: #0ee243;
+  cursor: pointer;
+
+}
+.total-container button:hover {
+  background: green;
+}
+
+
+/* --- 4. MEDIA QUERIES (Ajustes para Tablets e Computadores) --- */
+
+/* A partir de 480px (Tablets e ecrãs maiores): coloca Qtd e Preço Lado a Lado */
+@media (min-width: 480px) {
+  .container {
+    padding: 30px;
+  }
+
+  .campo-grupo {
+    flex-direction: row; /* Volta a alinhar lado a lado */
+  }
+
+  .campo-grupo .campo {
+    flex: 1; /* Ocupam 50% cada */
+  }
+}
+
+/* A partir de 768px (Computadores / Telas Grandes) */
+@media (min-width: 768px) {
+  body {
+    padding: 40px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+
